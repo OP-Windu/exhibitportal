@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background: #676767;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+header nav a {
+  margin: 0 10px;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2em;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column; /* 改為直向排列 */
+  align-items: center;    /* 置中 */
+  gap: 20px;              /* 元素之間的間距 */
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 80%;  /* 占據較大寬度，看起來像清單 */
+  max-width: 600px;
+  text-decoration: none;
+  color: #333;
+  text-align: left; /* 文字靠左，像清單 */
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
