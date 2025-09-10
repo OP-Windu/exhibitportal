@@ -30,26 +30,108 @@ main {
 
 .gallery {
   display: flex;
-  flex-direction: column; /* 改為直向排列 */
+  flex-direction: column; /* 直向排列 */
   align-items: center;    /* 置中 */
   gap: 20px;              /* 元素之間的間距 */
   margin-top: 20px;
 }
 
+/* 卡片（整張可點擊） */
 .card {
-  background: white;
+  position: relative; /* 讓圖標能絕對定位 */
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 20px;
-  width: 80%;  /* 占據較大寬度，看起來像清單 */
-  max-width: 600px;
-  text-decoration: none;
-  color: #333;
-  text-align: left; /* 文字靠左，像清單 */
-  transition: transform 0.2s;
+  padding: 12px;
+  width: 90%;
+  max-width: 700px;
+  margin: 10px 0;
+  background: #fff;
+  text-decoration: none; /* 移除連結底線 */
+  color: inherit;        /* 保持文字顏色一致 */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.thumbnail {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.card-content {
+  flex: 1;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.2em;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* 右上角圖標（跳 Google 表單用） */
+.icon-link {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.icon:hover {
+  opacity: 1;
+}
+
+.feedback-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #333;
+  margin-left: 12px;
+}
+
+.feedback-btn .icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+}
+.card-title-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-title-link:hover {
+  color: #0073e6; /* hover 時換顏色 */
+  text-decoration: underline;
+}
+.card-thumb-link {
+  display: inline-block;
+}
+
+.card-thumb-link img {
+  display: block;
+  border: none;
+}
